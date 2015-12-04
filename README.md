@@ -12,7 +12,7 @@ It is a Pig driven approach, covering
 
 Pig Script:
 
-    REGISTER piggybank.jar;
+    REGISTER /usr/hdp/2.3.0.0-2557/pig/lib/piggybank.jar;
     REGISTER /usr/hdp/2.3.0.0-2557/hive-hcatalog/share/hcatalog/hive-hcatalog-core.jar;
     REGISTER /usr/hdp/2.3.0.0-2557/hive-hcatalog/share/hcatalog/hive-hcatalog-pig-adapter.jar;
     //loading in raw data
