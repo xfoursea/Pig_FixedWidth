@@ -5,7 +5,7 @@ https://martin.atlassian.net/wiki/pages/viewpage.action?pageId=21299205
 
 Same sample data is used; the following works with Hortonworks Sandbox 2.3.0
 
-It is a Pig driven approach covers 
+It is a Pig driven approach, covering 
    1. Load in FixedWidth file
    2. Output data into hive table
    3. Output data to another FixedWidth file (after process)
