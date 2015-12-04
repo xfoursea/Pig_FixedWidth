@@ -15,7 +15,8 @@ Pig Script:
     REGISTER /usr/hdp/2.3.0.0-2557/pig/lib/piggybank.jar;
     REGISTER /usr/hdp/2.3.0.0-2557/hive-hcatalog/share/hcatalog/hive-hcatalog-core.jar;
     REGISTER /usr/hdp/2.3.0.0-2557/hive-hcatalog/share/hcatalog/hive-hcatalog-pig-adapter.jar;
-    //loading in raw data
+    
+    /* loading in raw data */
     
     emp = LOAD '/user/root/emps-fixed.txt'
         USING org.apache.pig.piggybank.storage.FixedWidthLoader(
@@ -23,11 +24,15 @@ Pig Script:
         'emp_id: chararray, first_name: chararray, last_name: chararray, job_title: chararray, mgr_emp_id: chararray'
       );
       
-    // Output 1: hive table
+    /* 
+    data process, skipped
+    */   
+      
+    /* Output 1: hive table */
     
     STORE emp INTO 'emp_table' USING org.apache.hive.hcatalog.pig.HCatStorer();
     
-    //Output 2: FixedWidth file to be scp to external host
+    /* Output 2: FixedWidth file to be scp to external host */
     
     store emp into '/user/root/emps-str' USING org.apache.pig.piggybank.storage.FixedWidthStorer('1-10, 11-30, 31-50, 51-70,   71-79','NO_HEADER');
 
